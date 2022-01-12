@@ -554,13 +554,18 @@ button:not([class="neu_button"]):hover {
     margin-top: 1px;
 }
 
-.about_title {
+.about_title,
+.services_title {
     text-decoration: underline;
     text-underline-position: under;
     font-style: oblique;
     margin: 0 auto;
     color: var(--marron);
-    margin-bottom: 30px;
+    margin: 20px auto 15px auto;
+}
+
+.about_title {
+    margin: 0 auto 30px auto;
 }
 
 
@@ -570,15 +575,67 @@ button:not([class="neu_button"]):hover {
 /********************* SERVICES BODY SECTION  **************************/
 
 #services {
-    margin: 0 50px;
+    margin: 30px auto;
     display: flex;
     flex-direction: column;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
-    height: 100%;
-    padding: 10rem 0;
+    width: 100%;
+    height: max-content;
+    justify-content: space-evenly;
+}
+
+.main-services {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(15rem, 20rem));
+    /*grid-auto-rows: minmax(100px, auto);*/
+    row-gap: 50px;
+    column-gap: 30px;
+    justify-content: space-evenly;
+}
+
+.service-column {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    /*************Glassmorphism*****************/
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    border-top: 1px solid rgb(255, 255, 255, 0.5);
+    border-left: 1px solid rgb(255, 255, 255, 0.5);
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+    /*************Glassmorphism*****************/
+}
+
+.service-column:hover {
+    transform: scale(1.05, 1.05);
+}
+
+.service_details {
+    text-align: justify;
+}
+
+@media screen and (min-width:600px) and (max-width:860px) {
+    .main-services {
+        grid-template-columns: repeat(2, minmax(16rem, 22rem));
+        row-gap: 30px;
+        column-gap: 30px;
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (max-width:599.99px) {
+    .main-services {
+        grid-template-columns: 95%;
+        /*grid-auto-rows: minmax(100px, auto);*/
+        row-gap: 30px;
+        justify-content: center;
+    }
+    .service_details {
+        font-size: 0.93rem;
+    }
 }
 
 h1:not([id="description_title"]),
@@ -875,10 +932,18 @@ h3,
     .trusted_by {
         margin-top: -160px;
     }
+    .slider-items {
+        width: calc(150px*10);
+    }
+    @keyframes scroll {
+        100% {
+            transform: translateX(calc(-150px*5));
+        }
+    }
     /***************About us *************/
     .about_column>p {
         margin-top: 1px;
-        font-size: 0.72em;
+        font-size: 0.8em;
     }
     .about_row {
         width: 100%;
@@ -932,11 +997,19 @@ h3,
     .trusted_by {
         margin-top: -110px;
     }
+    .slider-items {
+        width: calc(200px*10);
+    }
+    @keyframes scroll {
+        100% {
+            transform: translateX(calc(-200px*5));
+        }
+    }
     /***************About us *************/
     #how-it-works {
         flex-direction: column;
         width: calc(100% + 40px);
-        margin-block: 50px;
+        margin-block: 50px 0;
         align-items: center;
     }
     .about_us_details {
