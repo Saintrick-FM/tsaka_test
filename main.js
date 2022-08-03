@@ -17,6 +17,26 @@ const submit_search = document.querySelector('.submit_search')
 
 const search = document.querySelector('.search')
 
+// checking if all images in the DOM are loaded before calling resizeElements function
+let imgList = document.images;
+let len = imgList.length;
+let imgCounter = 0;
+
+[].forEach.call(imgList, function (img) {
+  if (img.complete) {
+    incrementImgCounter();
+  }
+  else {
+    img.addEventListener('load', incrementImgCounter, false);
+  }
+});
+
+function incrementImgCounter() {
+  imgCounter++;
+  if (imgCounter === len) {
+    console.log('All images loaded!');
+    
+    
 const screenWidth = `${screen.width}`
 screenWidth < 651 ? navbarToggle.style.display = "flex" : navbarToggle.style.display = "none";
 
@@ -62,3 +82,5 @@ mobileMenu.addEventListener('click', assignActiveMenu)
 firstNavlink.addEventListener('click', assignActiveMenu)
 secondNavlink.addEventListener('click', assignActiveMenu)
 thirdNavlink.addEventListener('click', assignActiveMenu)
+  }
+}
