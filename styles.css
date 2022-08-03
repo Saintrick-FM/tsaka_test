@@ -387,7 +387,7 @@ strong {
     border-radius: 20px;
     box-shadow: inset -10px -10px 30px rgba(150, 109, 92, 0.6), inset 10px -10px 10px rgba(150, 109, 92, 0.5);
     z-index: 1;
-    background: url("img/png-clipart-web-development-responsive-web-design-software-development-web-design-web-design-search-engine-optimization.png") no-repeat center / cover;
+    background: url("https://raw.githubusercontent.com/Saintrick-FM/Landing-page_freecodecamp/main/img/png-clipart-web-development-responsive-web-design-software-development-web-design-web-design-search-engine-optimization.png") no-repeat center / cover;
     background-size: cover;
     background-position: center;
 }
@@ -826,7 +826,7 @@ h4 {
     }
     .main-img_section {
         position: absolute;
-        background: url("img/dev-agency300.png") no-repeat;
+        background: url("https://raw.githubusercontent.com/Saintrick-FM/Landing-page_freecodecamp/main/img/dev-agency300.png") no-repeat;
         height: 250px;
         top: 195px;
        
@@ -892,7 +892,8 @@ h4 {
         margin: -10px 0 0 0;
     }
     .main-img_section {
-        background: url("img/dev-agency-mobile-format.png") no-repeat;
+       
+        background: url("https://raw.githubusercontent.com/Saintrick-FM/Landing-page_freecodecamp/main/img/dev-agency-mobile-format.png") no-repeat;
         height: 250px;
         width: 95%;
         margin-right: 55px;
@@ -1010,6 +1011,9 @@ footer{
     display: flex;
     justify-content: space-around;
     margin-left: 20px;
+  }
+  .fab{
+      margin-top:10px;
   }
   .footer_content .footer_top .media-icons a{
     height: 40px;
