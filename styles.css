@@ -260,7 +260,7 @@ li:nth-child(3) {
     outline: none;
     padding: 6px;
     border-radius: 30%;
-    color: var(--violet_body_border);
+    color: var(--footer);
     background: var(--blue_sky);
     box-shadow: 7px 7px 5px #babecc, -8px -8px 10px #fff;
     /* fallback for old browsers */
@@ -1147,8 +1147,8 @@ padding-left:10px ;
     margin-top: 2px;
   }
   ::placeholder {
-    color: white;
-    font-size: 1.17em;
+    color: var(--footer);
+    font-size: 1em;
     font-weight: bold;
     font-style: italic;
     padding-left: 15px;
