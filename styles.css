@@ -973,7 +973,7 @@ footer{
     border-radius: 10px;
     padding: 0px 15px 15px 15px;
 }
-  }
+  
   footer::before{
     content: '';
     position: absolute;
@@ -995,11 +995,40 @@ footer{
     width: -webkit-fill-available;
   }
   .footer-bottom{
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: minmax(100px, auto);
+      gap: 20px;
+    justify-items: end;
+    justify-content: center;
+    grid-template-areas:
+        "about links form "
+        "about links form";
+    padding: 0 20px 25px 20px;
   }
-  .footer_content .box{
-    width: calc(100% / 3);
+  .left{
+      grid-area: about;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: baseline;
+      height: -webkit-fill-available;
+  }
+  .about_us{
+    margin-bottom: 15px;
+  }
+  .middle{
+      grid-area: links;
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+  }
+  
+  .right{
+      grid-area: form;
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
   }
   
   .footer_content .footer_top .logo-details{
@@ -1073,10 +1102,12 @@ footer{
   .footer_content p {
       text-align: justify;
   }
-
-  .footer_content .contact-us .title {
+.about-us{
+    padding-bottom: 20px;
+}
+  /* .footer_content .contact-us .title {
 margin: 24px 0 5px 0;
-  }
+  } */
   .footer_content .contact-us i {
       padding-right: 16px;
   }
@@ -1147,23 +1178,28 @@ padding-left:10px ;
     margin-top: 2px;
   }
   ::placeholder {
-    color: var(--footer);
+    color: white;
     font-size: 1em;
     font-weight: bold;
     font-style: italic;
-    padding-left: 15px;
+    padding-left: 65px;
 }
+
+
 @media screen and (max-width: 720px){
-    .footer-bottom {
-        flex-direction: row;
-        display: flex;
-        justify-content: space-around;
-        align-items: self-start;
-        flex-flow: wrap;
-    }
-    .contact-us{
-        width: max-content;
-    }
+    .footer-bottom{
+        
+        grid-template-columns: repeat(2, 45% 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        gap: 20px;
+        justify-content: space-evenly;
+        grid-template-areas:
+            "about . links"
+            "about form form";
+        }
+        .contact-us{
+            padding-bottom: 27px;
+        }
     .footer_content .middle{
 padding-left: 0px;
     }
@@ -1172,5 +1208,23 @@ padding-left: 0px;
     }
     .right .title{
         padding: 30px 0 0 55px;
+    }
+}
+@media screen and (max-width:590px) {
+    .footer_top{
+        padding: 2px 40px 40px 40px;
+    }
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        margin: 0 auto;
+    }
+    
+    .left{
+        margin-bottom: -15px;
+    }
+    .middle{
+        margin-bottom: -20px;
     }
 }
