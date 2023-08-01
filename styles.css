@@ -19,23 +19,68 @@ body {
     min-height: 100%;
     border-top: none;
     font-family: 'Istok Web', sans-serif;
-    /* font-family: Patua One, Poppins, Arial; */
-    /* padding: 30px 30px 0 30px; */
     background-color: white;
-}
-
-
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 70px;
-    z-index: 1;
     padding: 0 25px;
 }
 
+/******************************* INTRO  **************************/
+.intro {
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    width: 80%;
+    /* Allow items to grow and take equal space within the container */
+    min-width: 100px;
+    /* Set a minimum width for each item */
+}
 
-/********************* SERVICES BODY SECTION  **************************/
+.title {
+    height: 50px;
+    width: 20%;
+    color: var(--primary_red);
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.comment {
+    max-width: 700px;
+    text-align: left;
+    padding: auto 0 auto 20px;
+    width: 80%;
+    margin: auto 0;
+}
+
+/******************************* TYPE OF COURSES  **************************/
+.course_categories {
+    display: flex;
+    width: auto;
+    justify-content: center;
+    margin-bottom: 43px;
+}
+
+.type_course_btn {
+    color: white;
+    font-size: 1em;
+    border: 2px solid var(--secondary_red);
+    border-radius: 15px;
+    box-shadow: none;
+    cursor: pointer;
+    margin: 0 20px;
+    margin-top: 25px;
+    width: auto;
+    padding: 20px 25px;
+    background: #FECDCD;
+    transition: all 0.5s linear;
+}
+
+.type_course_btn.active {
+    background: linear-gradient(0deg, #E6493D, #E6493D),
+        linear-gradient(0deg, #ED5B5B, #ED5B5B);
+}
+
+/******************************* SERVICES BODY SECTION  **************************/
 
 #services {
     margin: 30px auto;
@@ -43,13 +88,14 @@ main {
     flex-direction: column;
     width: 100%;
     height: max-content;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
 }
-
 
 .main-services {
     height: auto;
     display: grid;
+    width: 100%;
     grid-template-columns: repeat(3, minmax(10rem, 20rem));
     /*grid-auto-rows: minmax(100px, auto);*/
     row-gap: 50px;
@@ -92,14 +138,14 @@ main {
     text-align: justify;
 }
 
-.card_btn,
-.type_course_btn {
+.card_btn {
     padding: 10px;
     color: white;
     width: auto;
     font-size: 1em;
-    background: var(--secondary_red);
     border: 0 solid var(--secondary_red);
+    background: linear-gradient(0deg, #ED5B5B, #ED5B5B),
+        linear-gradient(0deg, #FECDCD, #FECDCD);
     border-radius: 10px;
     position: absolute;
     bottom: 0;
@@ -112,9 +158,8 @@ main {
 
 .card_btn:hover {
     color: var(--secondary_red);
-    background-color: transparent;
+    background: transparent;
     border: 1px solid var(--secondary_red);
-
 }
 
 .cicles_container {
@@ -126,30 +171,37 @@ main {
     justify-content: center;
 }
 
-.circle,
-.circle_active {
+.circle {
     width: 3em;
     height: 3em;
     margin: 0 5px;
     border: 2px solid var(--secondary_red);
     border-radius: 50%;
+    cursor: pointer;
 }
 
-.circle_active {
+.circle.active {
     background-color: var(--secondary_red);
 }
 
+/********************* END SERVICES BODY SECTION ***********************/
+/***********************     MEDIA QUERIES    **************************/
 
-@media screen and (min-width:551px) and (max-width:860px) {
+@media screen and (min-width:501px) and (max-width:860px) {
+    .type_course_btn {
+        width: 100px;
+        font-size: .8em;
+        margin: 0 12px;
+    }
+
     .main-services {
-        grid-template-columns: repeat(2, minmax(16rem, 22rem));
+        grid-template-columns: repeat(2, minmax(12rem, 20rem));
         row-gap: 30px;
         column-gap: 30px;
         justify-content: space-evenly;
     }
 
-    .circle,
-    .circle_active {
+    .circle {
         width: 2em;
         height: 2em;
         margin: 0 5px;
@@ -159,25 +211,36 @@ main {
 
 }
 
-@media screen and (max-width:550px) {
+@media screen and (max-width:500px) {
+    .course_categories {
+        flex-direction: column;
+    }
+
     .main-services {
-        grid-template-columns: 95%;
+        grid-template-columns: 86vw;
         /*grid-auto-rows: minmax(100px, auto);*/
         row-gap: 30px;
         justify-content: center;
+        position: relative;
     }
 
     .service_details {
         font-size: 0.93rem;
     }
 
-    .circle,
-    .circle_active {
+    .circle {
         width: 1em;
         height: 1em;
         margin: 0 5px;
         border: 2px solid var(--secondary_red);
         border-radius: 50%;
+        transition: all 0.5s linear;
+    }
+
+    .card_container,
+    .card {
+        width: 100%;
+        margin: 0 auto;
     }
 
     .card {
@@ -202,4 +265,34 @@ h3 {
 
 }
 
-/********************* END SERVICES BODY SECTION ***********************/
+/***********************     MEDIA QUERIES FOR INTRO SECTION    **************************/
+@media screen and (max-width:860px) {
+    .intro {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .comment,
+    .title {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .comment {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (min-width:860px) and (max-width:1050px) {
+
+    .title {
+        font-size: 35px;
+        width: auto;
+        margin-top: 10px;
+    }
+
+    .comment {
+        margin-left: 20px;
+    }
+}
