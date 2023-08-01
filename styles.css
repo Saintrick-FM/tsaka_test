@@ -80,9 +80,9 @@ body {
         linear-gradient(0deg, #ED5B5B, #ED5B5B);
 }
 
-/******************************* SERVICES BODY SECTION  **************************/
+/******************************* COURSES BODY SECTION  **************************/
 
-#services {
+#courses {
     margin: 30px auto;
     display: flex;
     flex-direction: column;
@@ -92,7 +92,7 @@ body {
     align-items: center;
 }
 
-.main-services {
+.main-courses {
     height: auto;
     display: grid;
     width: 100%;
@@ -184,7 +184,7 @@ body {
     background-color: var(--secondary_red);
 }
 
-/********************* END SERVICES BODY SECTION ***********************/
+/********************* END courses BODY SECTION ***********************/
 /***********************     MEDIA QUERIES    **************************/
 
 @media screen and (min-width:501px) and (max-width:860px) {
@@ -194,7 +194,7 @@ body {
         margin: 0 12px;
     }
 
-    .main-services {
+    .main-courses {
         grid-template-columns: repeat(2, minmax(12rem, 20rem));
         row-gap: 30px;
         column-gap: 30px;
@@ -216,7 +216,7 @@ body {
         flex-direction: column;
     }
 
-    .main-services {
+    .main-courses {
         grid-template-columns: 86vw;
         /*grid-auto-rows: minmax(100px, auto);*/
         row-gap: 30px;
